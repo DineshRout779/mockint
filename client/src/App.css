@@ -1,0 +1,37 @@
+div.rdp {
+  background: #2563eb;
+  background: -webkit-linear-gradient(top left, #2563eb, #9889aa);
+  background: -moz-linear-gradient(top left, #2563eb, #9889aa);
+  background: linear-gradient(to bottom right, #2563eb, #9889aa);
+  padding: 1em;
+  margin: 0 0 1em 0;
+  color: white;
+  width: fit-content;
+  border-radius: 4px;
+
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #160752;
+  --rdp-background-color: #160752;
+  /* Switch to dark colors for dark themes */
+  --rdp-accent-color-dark: #160752;
+  --rdp-background-color-dark: #180270;
+  /* Outline border for focused elements */
+  --rdp-outline: none;
+  /* Outline border for focused and selected elements */
+  --rdp-outline-selected: none;
+}
+
+.links {
+  height: 0;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+
+  transition: all 0.3s ease-in;
+}
+
+.expand {
+  overflow: initial;
+  min-height: auto;
+}
