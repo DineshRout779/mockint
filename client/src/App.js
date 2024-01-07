@@ -2,6 +2,7 @@ import { useLayoutEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const { pathname } = useLocation();
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <>
+      <Toaster position='bottom-center' reverseOrder={false} />
       <Navbar />
       <Outlet />
     </>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = 'http://localhost:1338/api';
+const API = 'http://localhost:5000/api';
 
 export const createSlotService = async (values, user, token) => {
   return await axios.post(`${API}/interview/${user._id}`, values, {

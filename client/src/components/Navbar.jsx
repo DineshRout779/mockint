@@ -51,14 +51,14 @@ const Navbar = () => {
   }, [location.pathname]);
 
   return (
-    <nav className='w-full  z-50  sticky top-0 bg-white dark:bg-[#262626] dark:text-white shadow-sm'>
-      <div className='container border-b dark:border-gray-600 px-4 md:px-0 mx-auto mx-lg'>
+    <nav className='w-full  z-50  sticky top-0 bg-white dark:bg-[#131313] backdrop-filter backdrop-blur-sm bg-opacity-10 dark:text-white shadow-sm'>
+      <div className='container w-[90%] px-4 md:px-0 mx-auto max-w-[1200px]'>
         <div className='py-4'>
           <div className='flex justify-between'>
             <div className='flex justify-between items-center'>
               <Link
                 to='/'
-                className='block text-2xl leading-none font-bold text-blue-600'
+                className='block text-2xl leading-none font-bold text-zinc-800 dark:text-white'
               >
                 MockInt
               </Link>
@@ -123,10 +123,12 @@ const Navbar = () => {
                   <button onClick={handleTheme}>
                     {theme === 'light' ? <BsSun /> : <BsMoon />}
                   </button>
-                  <Link to='login'>Login</Link>
+                  <Link to='login' className='p-2 px-4 rounded-md'>
+                    Login
+                  </Link>
                   <Link
                     to='signup'
-                    className='bg-blue-600 hover:bg-blue-800 text-white p-2 px-4 rounded-full'
+                    className='bg-blue-600 hover:bg-blue-700 text-white p-2 px-4 rounded-md'
                   >
                     Signup
                   </Link>

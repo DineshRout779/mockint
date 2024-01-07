@@ -6,11 +6,14 @@ import Select from 'react-select';
 import { useApp } from '../context/AppContext';
 import { createSlotService } from '../services/book-service';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const options = [
   { value: 'frontend', label: 'Front-end' },
   { value: 'backend', label: 'Backend' },
   { value: 'fullstack', label: 'Full-Stack' },
+  { value: 'general', label: 'General (oncampus)' },
+  { value: 'devops', label: 'DevOps' },
 ];
 
 const Book = () => {
@@ -36,14 +39,17 @@ const Book = () => {
           state.user.token
         );
 
-        if (res.status === 200) {
+        if (res.status === 201) {
+          toast.success('Slot booked ✅');
           navigate('/dashboard');
         }
       } catch (error) {
+        // toast.success(error.response.)
         console.log(error.response);
       }
     } else {
-      console.log('please fill all the fields');
+      // console.log('please fill all the fields');
+      toast.error('Please fill all the fields');
     }
   };
 
@@ -70,8 +76,8 @@ const Book = () => {
 
   return (
     <div className='dark:bg-[#131313] dark:text-gray-300'>
-      <div className='container p-4 md:px-0 mx-auto mx-lg min-h-screen'>
-        <h1 className='text-2xl my-4 dark:text-white'>
+      <div className='container w-[90%] px-4 md:px-0 mx-auto max-w-[1200px] py-8 min-h-screen'>
+        <h1 className='text-2xl mb-4 dark:text-white'>
           Open a slot for giving a mock interview.
         </h1>
 
@@ -134,7 +140,7 @@ const Book = () => {
                 fromDate={new Date()}
               />
             </div>
-            {values.date && <p>You selected {format(values.date, 'PP')}</p>}
+            {values.date && <p>You selected {format(values.date, 'PP')} ✅</p>}
           </div>
         </form>
       </div>

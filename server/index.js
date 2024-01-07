@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(morgan('common'));
 app.use(cors());
 
-const PORT = process.env.PORT || 1338;
+const PORT = process.env.PORT || 5000;
 
 // connect to database
 connectDB();
